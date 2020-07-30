@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}用户注册{% endblock %}
+{% block styles %}
+    {{ super() }}
+    <style>
+        #container {
+            width: 1000px;
+            margin: 0 auto;
+            height: 600px;
+        }
+    </style>
+{% endblock %}
+
+{% block newcontent %}
+    <div id="container">
+        <h1>用户注册</h1>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="inputUsername" class="col-sm-2 control-label">用户名</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-sm-2 control-label">密码</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputConfirm" class="col-sm-2 control-label">确认密码</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputConfirm" placeholder="confirm password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPhone" class="col-sm-2 control-label">手机号码</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail" class="col-sm-2 control-label">邮箱</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">注册</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
