@@ -1,9 +1,7 @@
 from flask import Blueprint, render_template, request
 
-from apps.user.models import User
-
 from apps.article.models import Article
-
+from apps.user.models import User
 from exts import db
 
 article_bp = Blueprint('article', __name__)
@@ -22,7 +20,8 @@ def publish_article():
         article.user_id = uid
         db.session.add(article)
         db.session.commit()
-        return '提交成功'
+        return '添加成功！'
+
     else:
         users = User.query.filter(User.isdelete == False).all()
         return render_template('article/add_article.html', users=users)

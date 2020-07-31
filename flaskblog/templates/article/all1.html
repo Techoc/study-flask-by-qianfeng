@@ -5,12 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-{#根据用户获取用户的文章#}
+{# 根据用户获取该用户的文章们
+   select * from user,article on user.id=article.user_id where user.id=3
+#}
 {% for article in user.articles %}
     <div id="container">
         <p>
         <h3>{{ article.title }}</h3>
-        <div>作者:{{ user.username }}</div>
+                    {# 根据文章找作者 #}
+        <div>作者：{{ user.username }}</div>
         </p>
         <p>
             {{ article.content }}

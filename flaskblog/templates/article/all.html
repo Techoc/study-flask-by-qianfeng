@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        #container {
+        #container{
             border: 1px solid brown;
             margin-bottom: 10px;
             padding: 5px;
         }
     </style>
+
 </head>
 <body>
 {% for article in articles %}
     <div id="container">
         <p>
         <h3>{{ article.title }}</h3>
-        <div>作者:{{ article.user }}</div>
+                    {# 根据文章找作者 #}
+        <div>作者：{{ article.user.username }}</div>
         </p>
         <p>
             {{ article.content }}
@@ -24,6 +26,7 @@
         <div>{{ article.pdatetime }}</div>
     </div>
 {% endfor %}
+
 
 </body>
 </html>
