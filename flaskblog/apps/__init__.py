@@ -1,6 +1,7 @@
 from flask import Flask
 
 from apps.article.view import article_bp
+from apps.article.views import article_bp1
 from apps.user.view import user_bp
 from apps.user.views import user_bp1
 from exts import db, bootstrap
@@ -16,6 +17,6 @@ def create_app():
     bootstrap.init_app(app=app)
     # 注册蓝图
     app.register_blueprint(user_bp1)
-    # app.register_blueprint(article_bp)
-    print(app.url_map)
+    app.register_blueprint(article_bp1)
+    # print(app.url_map)
     return app
